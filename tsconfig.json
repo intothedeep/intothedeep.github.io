@@ -38,12 +38,13 @@
     "target": "ES2017"
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
     "**/types/**/*.ts",
-    "sr/types/**/*"
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "sr/types/**/*",
+    "./dist/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

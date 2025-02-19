@@ -37,3 +37,8 @@ next-env.d.ts
 
 .turbo
 .yarn
+
+# etc
+dist
+.idea
+.DS_Store
