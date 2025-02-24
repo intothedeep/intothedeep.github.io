@@ -19,7 +19,10 @@ export const Resume = (props: Props) => {
             <article
                 id="resume"
                 className={clsx(
-                    'w-[210mm] h-[297mm]',
+                    [
+                        'w-[210mm]', 
+                        // 'h-[297mm]'
+                    ],
                     'flex justify-between',
                     'txt-xs',
                     'm-auto p-5',
@@ -35,12 +38,15 @@ export const Resume = (props: Props) => {
                     </div>
                     <div>Java, Javascript, spring</div>
                 </div> */}
-                <embed
-                    src={'/v1/pdf/resume.pdf'}
+                {/* <embed
+                    src={'/v1/pdfs/resume.pdf'}
                     // width="800px"
                     // height=""
                     className={clsx('flex-1')}
-                />
+                /> */}
+                <div>
+                    <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" />
+                </div>
             </article>
         </section>
     );

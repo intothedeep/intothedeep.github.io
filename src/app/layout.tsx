@@ -40,7 +40,7 @@ export default function RootLayout({
                         <main
                             className={clsx(
                                 'flex-1',
-                                'py-12 px-6 md:px-12 lg:px-24',
+                                'py-6 px-6 md:px-12 lg:px-24',
                                 'dark:bg-[#1a1b1e]',
                                 'dark:text-primary-foreground',
                             )}
