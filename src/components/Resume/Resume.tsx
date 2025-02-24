@@ -2,6 +2,7 @@
 
 import React from 'react';
 import clsx from 'clsx';
+import Image from 'next/image';
 
 type Props = {};
 
@@ -45,7 +46,8 @@ export const Resume = (props: Props) => {
                     className={clsx('flex-1')}
                 /> */}
                 <div>
-                    <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" />
+                    {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
+                    <Image src="/v1/imgs/resume.jpg" alt="resume" width={1000} height={297}/>
                 </div>
             </article>
         </section>

@@ -4,7 +4,7 @@ import i18n from './i18n.config.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // Outputs a Single-Page Application (SPA).
+    // output: 'export', // Outputs a Single-Page Application (SPA).
     // output: "standalone", // Outputs a static site. docker?
     // distDir: './dist', // .next dfault // Changes the build output directory to `./dist/`. 
     webpack: (config, options) => {

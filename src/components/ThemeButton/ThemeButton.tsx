@@ -35,7 +35,7 @@ export const ThemeButton = (props: Props) => {
 
     useEffect(() => {
         setTheme('dark');
-    }, []);
+    }, [setTheme]);
 
     // const { isMounted } = useIsMounted();
     // if (!isMounted) {
