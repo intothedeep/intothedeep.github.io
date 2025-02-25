@@ -47,7 +47,7 @@ export const Resume = (props: Props) => {
                 /> */}
                 <div>
                     {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
-                    <Image src="/v1/imgs/resume.jpg" alt="resume" width={1000} height={297}/>
+                    <Image src="/v1/imgs/resume_small.jpg" alt="resume" width={1000} height={297}/>
                 </div>
             </article>
         </section>
