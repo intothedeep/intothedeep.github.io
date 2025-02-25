@@ -45,10 +45,14 @@ export const Resume = (props: Props) => {
                     // height=""
                     className={clsx('flex-1')}
                 /> */}
-                <div>
-                    {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
-                    <Image src="/v1/imgs/resume_small.jpg" alt="resume" width={1000} height={297}/>
-                </div>
+                {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
+                <Image 
+                    src="/v1/imgs/resume_small.jpeg" 
+                    alt="Lim Taek resume" 
+                    objectFit='cover'
+                    width={1000} 
+                    height={297}
+                    />
             </article>
         </section>
     );
