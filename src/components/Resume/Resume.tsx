@@ -19,17 +19,16 @@ export const Resume = (props: Props) => {
         >
             <article
                 id="resume"
-                className={clsx(
-                    [
-                        'w-[210mm]', 
-                        // 'h-[297mm]'
-                    ],
-                    'flex justify-between',
+                className={clsx([
+                    'w-[210mm]',
+                    'h-[297mm]',
+                    'flex',
+                    'justify-between',
                     'txt-xs',
                     'm-auto p-5',
                     'rounded-lg shadow-md',
                     'bg-white dark:bg-zinc-800',
-                )}
+                ])}
             >
                 {/* <div className={clsx('flex flex-1 justify-between')}>
                     <h1 className={clsx('text-base')}>Taek Lim</h1>
@@ -46,13 +45,13 @@ export const Resume = (props: Props) => {
                     className={clsx('flex-1')}
                 /> */}
                 {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
-                <Image 
-                    src="/v1/imgs/resume_small.jpeg" 
-                    alt="Lim Taek resume" 
-                    objectFit='cover'
-                    width={1000} 
-                    height={297}
-                    />
+                <Image
+                    src="/v1/imgs/resume_small.jpeg"
+                    alt="Lim Taek resume"
+                    objectFit="cover"
+                    width={1000}
+                    height={0}
+                />
             </article>
         </section>
     );
