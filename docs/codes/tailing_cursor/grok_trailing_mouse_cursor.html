@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fading Cursor Effect</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: #f0f0f0;
+				position: relative;
+			}
+			#cursor-trail-canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 9999;
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cursor-trail-canvas"></canvas>
+
+		<script>
+			const canvas = document.getElementById("cursor-trail-canvas");
+			const ctx = canvas.getContext("2d");
+			let dots = [];
+			let lastDotTime = 0;
+			const dotInterval = 50; // New dot every 50ms
+			const initialRadius = 5; // Starting size of each dot
+			const fadeDuration = 1000; // Fade and shrink over 1 second
+			const dotColor = "#666666"; // Dark grey (you can change to '#cccccc' for light grey)
+
+			// Resize canvas to fit window
+			function resizeCanvas() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			resizeCanvas();
+			window.addEventListener("resize", resizeCanvas);
+
+			// Add new dot on mouse move
+			window.addEventListener("mousemove", (event) => {
+				let currentTime = Date.now();
+				if (currentTime - lastDotTime > dotInterval) {
+					lastDotTime = currentTime;
+					dots.push({
+						x: event.clientX,
+						y: event.clientY,
+						time: currentTime,
+					});
+				}
+			});
+
+			// Animation loop
+			function animate() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				let currentTime = Date.now();
+
+				for (let i = dots.length - 1; i >= 0; i--) {
+					let dot = dots[i];
+					let age = (currentTime - dot.time) / fadeDuration; // Age as fraction of fade duration
+					let opacity = 1 - age; // Linear fade
+					let radius = initialRadius * (1 - age); // Linear shrink
+
+					if (opacity <= 0 || radius <= 0) {
+						dots.splice(i, 1); // Remove fully faded/shrunk dots
+					} else {
+						ctx.beginPath();
+						ctx.fillStyle = `rgba(102, 102, 102, ${opacity})`; // Dark grey with fading opacity
+						ctx.arc(dot.x, dot.y, radius, 0, 2 * Math.PI);
+						ctx.fill();
+					}
+				}
+
+				requestAnimationFrame(animate);
+			}
+			animate();
+		</script>
+	</body>
+</html>

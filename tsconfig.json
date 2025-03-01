@@ -1,27 +1,46 @@
 {
-  "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "paths": {
+            "@/*": ["./src/*"],
+            "@svg/*": ["./src/assets/svgs/*"],
+            "@/components/*": ["./src/components/*"],
+            "@ui/*": ["./src/components/ui/*"]
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types",
+            "**/types",
+            "./typings"
+        ],
+        "target": "ES2017"
+    },
+    // "include": [
+    //     "**/*.ts",
+    //     "**/*.tsx",
+    //     "**/types/**/*.ts",
+    //     ".next/types/**/*.ts",
+    //     "next-env.d.ts",
+    //     "sr/types/**/*",
+    //     "./dist/types/**/*.ts"
+    // ],
+    "include": ["**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+    // "exclude": ["node_modules"].,
+    "exclude": ["node_modules", "*.stories.*", "*.spec.*", "tio-*", "*.mock.*"]
 }

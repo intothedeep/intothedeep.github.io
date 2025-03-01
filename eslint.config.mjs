@@ -1,16 +1,30 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+    baseDirectory: __dirname,
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+    ...compat.extends('next/core-web-vitals', 'next/typescript'),
+    ...compat.config({
+        extends: ['next'],
+        rules: {
+            'react/no-unescaped-entities': 'off',
+            '@next/next/no-page-custom-font': 'off',
+            'no-unused-vars': 'off',
+            '@typescript-eslint/no-empty-object-type': [
+                'warn',
+                {
+                    allowObjectTypes: 'always', // 'never'
+                },
+            ],
+        },
+    }),
 ];
 
 export default eslintConfig;

@@ -1,0 +1,100 @@
+header {
+	grid-area: header;
+	background-color: var(--header-bg);
+	color: var(--header-text);
+	padding: 1rem clamp(10px, 5vw, 20px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.theme-toggle {
+	background: none;
+	border: none;
+	color: var(--header-text);
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+@media (min-width: 0px) {
+	nav {
+		display: none;
+	}
+
+	.hamburger {
+		display: block;
+	}
+
+	.side-menu {
+		display: block;
+	}
+
+	.side-menu {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: -250px;
+		width: 250px;
+		height: 100%;
+		background-color: var(--side-menu-bg); /* Use separate variable */
+		padding: 2rem 1rem;
+		transition: left 0.3s ease;
+		z-index: 10000;
+	}
+
+	.side-menu.open {
+		left: 0;
+	}
+
+	.side-menu a {
+		display: block;
+		color: var(--header-text);
+		text-decoration: none;
+		font-size: 1.2rem;
+		margin: 1rem 0;
+	}
+
+	.side-menu a:hover {
+		text-decoration: underline;
+	}
+}
+
+@media (min-width: 481px) {
+	nav {
+		display: grid;
+		grid-template-columns: auto 1fr auto auto auto;
+		align-items: center;
+		gap: 15px;
+	}
+
+	nav a {
+		color: var(--header-text);
+		text-decoration: none;
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+	}
+
+	nav a:hover {
+		text-decoration: underline;
+	}
+
+	nav a:first-child {
+		justify-self: start;
+	}
+
+	nav a:not(:first-child) {
+		justify-self: end;
+	}
+
+	.side-menu {
+		display: none !important;
+	}
+
+	.hamburger {
+		display: none;
+		font-size: 2rem;
+		background: none;
+		border: none;
+		color: var(--header-text);
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fading Cursor Effect with Responsive Content</title>
+		<style>
+			/* Reset and basic styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				position: relative;
+				min-height: 100vh;
+				overflow-x: hidden;
+			}
+
+			/* Canvas overlay */
+			#cursor-trail-canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 9999;
+				pointer-events: none; /* Ensures canvas doesn't block interactions */
+			}
+
+			/* Responsive webpage styles */
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			header {
+				background-color: #333;
+				color: white;
+				padding: 1rem;
+				text-align: center;
+			}
+
+			header h1 {
+				font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive font size */
+			}
+
+			nav {
+				margin-top: 1rem;
+			}
+
+			nav a {
+				color: white;
+				text-decoration: none;
+				margin: 0 15px;
+				font-size: clamp(0.9rem, 2vw, 1.2rem);
+			}
+
+			nav a:hover {
+				text-decoration: underline;
+			}
+
+			main {
+				padding: 2rem 0;
+			}
+
+			.content {
+				background: white;
+				padding: 20px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				margin-bottom: 20px;
+			}
+
+			.content h2 {
+				font-size: clamp(1.2rem, 3vw, 1.8rem);
+				margin-bottom: 10px;
+			}
+
+			.content p {
+				font-size: clamp(0.9rem, 2vw, 1rem);
+				line-height: 1.6;
+			}
+
+			footer {
+				text-align: center;
+				padding: 1rem;
+				background-color: #333;
+				color: white;
+				position: relative;
+				bottom: 0;
+				width: 100%;
+			}
+
+			/* Media Queries for additional responsiveness */
+			@media (max-width: 768px) {
+				.container {
+					padding: 10px;
+				}
+				nav a {
+					display: block;
+					margin: 10px 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Canvas for cursor effect -->
+		<canvas id="cursor-trail-canvas"></canvas>
+
+		<!-- Your webpage content -->
+		<div class="container">
+			<header>
+				<h1>My Website</h1>
+				<nav>
+					<a href="#home">Home</a>
+					<a href="#about">About</a>
+					<a href="#services">Services</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</header>
+
+			<main>
+				<section class="content">
+					<h2>Welcome</h2>
+					<p>
+						This is a sample webpage with a fading cursor effect. The content is
+						fully responsive and adapts to different screen sizes. Move your
+						mouse to see the grey dots shrink and fade out!
+					</p>
+				</section>
+				<section class="content">
+					<h2>About Us</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco.
+					</p>
+				</section>
+			</main>
+
+			<footer>
+				<p>&copy; 2025 My Website. All rights reserved.</p>
+			</footer>
+		</div>
+
+		<script>
+			const canvas = document.getElementById("cursor-trail-canvas");
+			const ctx = canvas.getContext("2d");
+			let dots = [];
+			let lastDotTime = 0;
+			const dotInterval = 50; // New dot every 50ms
+			const initialRadius = 5; // Starting size of each dot
+			const fadeDuration = 1000; // Fade and shrink over 1 second
+			const dotColor = "#666666"; // Dark grey
+
+			// Resize canvas to fit window
+			function resizeCanvas() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			resizeCanvas();
+			window.addEventListener("resize", resizeCanvas);
+
+			// Add new dot on mouse move
+			window.addEventListener("mousemove", (event) => {
+				let currentTime = Date.now();
+				if (currentTime - lastDotTime > dotInterval) {
+					lastDotTime = currentTime;
+					dots.push({
+						x: event.clientX,
+						y: event.clientY,
+						time: currentTime,
+					});
+				}
+			});
+
+			// Animation loop
+			function animate() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				let currentTime = Date.now();
+
+				for (let i = dots.length - 1; i >= 0; i--) {
+					let dot = dots[i];
+					let age = (currentTime - dot.time) / fadeDuration; // Age as fraction of fade duration
+					let opacity = 1 - age; // Linear fade
+					let radius = initialRadius * (1 - age); // Linear shrink
+
+					if (opacity <= 0 || radius <= 0) {
+						dots.splice(i, 1); // Remove fully faded/shrunk dots
+					} else {
+						ctx.beginPath();
+						ctx.fillStyle = `rgba(102, 102, 102, ${opacity})`; // Dark grey with fading opacity
+						ctx.arc(dot.x, dot.y, radius, 0, 2 * Math.PI);
+						ctx.fill();
+					}
+				}
+
+				requestAnimationFrame(animate);
+			}
+			animate();
+		</script>
+	</body>
+</html>

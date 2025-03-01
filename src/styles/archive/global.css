@@ -1,0 +1,42 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import "tailwindcss";
+
+/* @import "tailwindcss" */
+/* @import "tailwindcss"; 는 필요하지 않습니다. 
+   이미 @tailwind base, components, utilities 지시문이 있기 때문입니다.
+   postcss.config.mjs에서 tailwind가 설정되어 있고
+   package.json에서 tailwindcss가 의존성으로 추가되어 있습니다. */
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 240 10% 3.9%;
+        --card: 0 0% 100%;
+        --card-foreground: 240 10% 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 240 10% 3.9%;
+        --primary: 240 5.9% 10%;
+        --primary-foreground: 0 0% 98%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 45%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}
