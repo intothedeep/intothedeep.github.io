@@ -24,13 +24,13 @@ export const ThemeButton = (props: Props) => {
         '(prefers-color-scheme: dark)'
     );
 
-    const isDark = currentTheme == Theme.dark;
+    const isDark = currentTheme === Theme.dark;
 
     const handleOnClickTheme = () => {
         const theme = document.body.getAttribute('data-theme');
 
         let next = (theme as Theme) || currentTheme;
-        if (theme == Theme.dark) {
+        if (theme === Theme.dark) {
             next = Theme.light;
         } else {
             next = Theme.dark;

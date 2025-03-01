@@ -1,8 +1,5 @@
 import { Resume } from '@/components/Resume';
-import React from 'react';
 
-const AboutPage = () => {
+export default function AboutPage() {
     return <Resume />;
-};
-
-export default AboutPage;
+}
