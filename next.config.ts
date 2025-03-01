@@ -3,7 +3,7 @@ import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-    // output: 'export', // Outputs a Single-Page Application (SPA).
+    output: 'export', // Outputs a Single-Page Application (SPA).
     // output: "standalone", // Outputs a static site. docker?
     // distDir: './dist', // .next dfault // Changes the build output directory to `./dist/`.
 
