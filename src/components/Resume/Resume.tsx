@@ -1,3 +1,4 @@
+import ResumeTOC from '@/components/Resume/ResumeTOC';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
@@ -53,49 +54,7 @@ export const Resume = (props: Props) => {
                     // style={{ width: '100%', height: 'auto' }}
                 />
             </article>
-            <ul className={clsx('sticky w-fit right-1 top-1 ml-2 h-fit')}>
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/tiotaeklim/"
-                        target="_blank"
-                    >
-                        Linkedin
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/tradelunch"
-                        target="_blank"
-                    >
-                        Github
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://algorithm.prettylog.com/"
-                        target="_blank"
-                    >
-                        Algorithms
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://blog.tradelunch.com/"
-                        target="_blank"
-                    >
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="mailto:tiotaeklim@gmail.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        tio.taek.lim@gmail.com
-                    </a>
-                </li>
-            </ul>
+            <ResumeTOC />
         </main>
     );
 };
