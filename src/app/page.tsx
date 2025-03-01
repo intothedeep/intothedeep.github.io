@@ -1,12 +1,8 @@
-import { redirect } from "next/navigation";
+import ClientRedirect from '@/app/ClientRedirect';
+import { redirect } from 'next/navigation';
 
 export default function page() {
-	redirect("/about");
+    // redirect("/about");
 
-	// return (
-	// 	<div>
-	// 		<ClientTestRXJS />
-	// 		<h1>main</h1>
-	// 	</div>
-	// );
+    return <ClientRedirect />;
 }
