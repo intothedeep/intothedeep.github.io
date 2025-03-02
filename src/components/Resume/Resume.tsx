@@ -1,7 +1,8 @@
 import ResumeTOC from '@/components/Resume/ResumeTOC';
 import clsx from 'clsx';
-import Image from 'next/image';
 import React from 'react';
+
+import './Resume.scss';
 
 type Props = {};
 
@@ -11,8 +12,7 @@ export const Resume = (props: Props) => {
             <article
                 id="resume"
                 className={clsx(
-                    'w-[210mm]',
-                    'h-[297mm]',
+                    // 'max-w-max',
                     'flex',
                     'justify-between',
                     'txt-xs',
@@ -39,17 +39,22 @@ export const Resume = (props: Props) => {
                     className={clsx('flex-1')}
                 /> */}
                 {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
-                <Image
+                <img
                     src="/v1/imgs/resume_small.jpeg"
                     alt="Lim Taek resume"
-                    priority
+                    fetchPriority={'high'}
                     className={
-                        clsx('object-cover')
+                        clsx([
+                            'object-cover',
+                            // 'w-auto',
+                            'w-[210mm]',
+                            // 'h-[297mm]',
+                        ])
                         // 'w-full',
                         // 'h-auto',
                     }
-                    width={1000}
-                    height={0}
+                    // width={1000}
+                    // height={0}
                     // sizes="100vw"
                     // style={{ width: '100%', height: 'auto' }}
                 />

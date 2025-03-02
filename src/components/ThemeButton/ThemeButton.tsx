@@ -58,19 +58,19 @@ export const ThemeButton = (props: Props) => {
             onClick={handleOnClickTheme}
             className={clsx(['cursor-pointer'])}
         >
-            {isDark && (
-                <SunIcon
-                    width={24}
-                    height={24}
-                />
-            )}
+            {isDark &&
+                // <SunIcon
+                //     width={24}
+                //     height={24}
+                // />
+                '😎'}
 
-            {!isDark && (
-                <MoonIcon
-                    width={24}
-                    height={24}
-                />
-            )}
+            {!isDark &&
+                // <MoonIcon
+                //     width={24}
+                //     height={24}
+                // />
+                '🌑'}
         </button>
     );
 };

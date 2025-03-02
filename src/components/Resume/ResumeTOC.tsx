@@ -1,3 +1,6 @@
+'use client';
+
+import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -5,7 +8,12 @@ type Props = {};
 
 export const ResumeTOC = (props: Props) => {
     return (
-        <ul className={clsx('sticky w-fit right-1 top-1 ml-2 h-fit')}>
+        <ul
+            className={clsx(
+                'resume-toc',
+                'sticky w-fit right-1 top-1 ml-2 h-fit'
+            )}
+        >
             <li>
                 <a
                     href="https://www.linkedin.com/in/tiotaeklim/"
