@@ -3,14 +3,14 @@ import path from 'path';
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-    // output: 'export', // Outputs a Single-Page Application (SPA).
+    output: 'export', // Outputs a Single-Page Application (SPA).
     // output: "standalone", // Outputs a static site. docker?
     // distDir: './dist', // .next dfault // Changes the build output directory to `./dist/`.
 
     /** 이미지 최적화 비활성화 */
-    images: {
-        unoptimized: true,
-    },
+    // images: {
+    //     unoptimized: true,
+    // },
 
     /** turbo pack */
 
