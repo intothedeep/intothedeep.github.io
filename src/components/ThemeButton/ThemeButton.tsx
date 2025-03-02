@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
 
 // SVG 컴포넌트 임포트
-import SunIcon from '@svg/sun.svg';
-import MoonIcon from '@svg/moon.svg';
+import SunIcon from '@/svg/sun.svg';
+import MoonIcon from '@/svg/moon.svg';
 import clsx from 'clsx';
 import { useIsMounted } from '@/hooks/useIsMounted.hook';
 

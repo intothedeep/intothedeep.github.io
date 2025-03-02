@@ -5,12 +5,20 @@ import path from 'path';
 const nextConfig: NextConfig = {
     output: 'export', // Outputs a Single-Page Application (SPA).
     // output: "standalone", // Outputs a static site. docker?
-    // distDir: './dist', // .next dfault // Changes the build output directory to `./dist/`.
 
-    /** 이미지 최적화 비활성화 */
-    // images: {
-    //     unoptimized: true,
-    // },
+    // Optional: Change the output directory `out` -> `dist`
+    // distDir: 'dist',
+
+    // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
+    // trailingSlash: true,
+
+    // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
+    // skipTrailingSlashRedirect: true,
+
+    /** deactivate for SPA */
+    images: {
+        unoptimized: true,
+    },
 
     /** turbo pack */
 
@@ -61,15 +69,15 @@ const nextConfig: NextConfig = {
         // Update alias
         config.resolve.alias = {
             ...config.resolve.alias,
-            '@svg': [
+            '@/svg': [
                 path.resolve(process.cwd(), './src/assets/svgs'),
                 path.resolve(process.cwd(), 'src/assets/svgs'),
             ],
-            '@ui': [
+            '@/ui': [
                 path.resolve(process.cwd(), './src/components/ui'),
                 path.resolve(process.cwd(), 'src/components/ui'),
             ],
-            '@components': [
+            '@/components': [
                 path.resolve(process.cwd(), './src/components'),
                 path.resolve(process.cwd(), 'src/components'),
             ],
@@ -77,7 +85,7 @@ const nextConfig: NextConfig = {
 
         return config;
     },
-    
+
     /**
      * @details no SPA
      */

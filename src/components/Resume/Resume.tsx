@@ -42,9 +42,9 @@ export const Resume = (props: Props) => {
                 <Image
                     src="/v1/imgs/resume_small.jpeg"
                     alt="Lim Taek resume"
-                    objectPosition="cover"
+                    priority
                     className={
-                        clsx()
+                        clsx('object-cover')
                         // 'w-full',
                         // 'h-auto',
                     }

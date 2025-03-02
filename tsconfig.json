@@ -19,9 +19,9 @@
         ],
         "paths": {
             "@/*": ["./src/*"],
-            "@svg/*": ["./src/assets/svgs/*"],
+            "@/svg/*": ["./src/assets/svgs/*"],
             "@/components/*": ["./src/components/*"],
-            "@ui/*": ["./src/components/ui/*"]
+            "@/ui/*": ["./src/components/ui/*"]
         },
         "typeRoots": [
             "./node_modules/@types",
