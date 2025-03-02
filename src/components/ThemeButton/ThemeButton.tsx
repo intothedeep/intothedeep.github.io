@@ -7,6 +7,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
 import SunIcon from '@svg/sun.svg';
 import MoonIcon from '@svg/moon.svg';
 import clsx from 'clsx';
+import { useIsMounted } from '@/hooks/useIsMounted.hook';
 
 export enum Theme {
     dark = 'dark',
@@ -45,6 +46,12 @@ export const ThemeButton = (props: Props) => {
         setCurrentTheme(theme);
     }, []);
     console.log('check isSystemDark ', currentTheme, isSystemDark);
+
+    const { isMounted } = useIsMounted();
+
+    if (!isMounted) {
+        return;
+    }
 
     return (
         <button
