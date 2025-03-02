@@ -11,11 +11,12 @@ export const ClientRedirect = () => {
 
     useEffect(() => {
         if (isMounted) {
+            console.log('push to /about');
             router.push('/about');
         }
     }, [isMounted]);
 
-    return undefined;
+    return <></>;
 };
 
 export default ClientRedirect;
