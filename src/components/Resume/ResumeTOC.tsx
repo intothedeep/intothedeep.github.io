@@ -41,10 +41,10 @@ export const ResumeTOC = (props: Props) => {
             </li>
             <li>
                 <a
-                    href="https://blog.tradelunch.com/"
+                    href="https://my.prettylog.com/"
                     target="_blank"
                 >
-                    Blog
+                    Portfolio
                 </a>
             </li>
             <li>

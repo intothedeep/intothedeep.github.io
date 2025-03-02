@@ -61,6 +61,7 @@ export const Resume = (props: Props) => {
                     // style={{ width: '100%', height: 'auto' }}
                 />
             </article>
+
             <ResumeTOC />
         </main>
     );
