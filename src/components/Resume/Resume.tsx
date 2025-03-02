@@ -15,6 +15,8 @@ export const Resume = (props: Props) => {
                     // 'max-w-max',
                     'flex',
                     'justify-between',
+                    'items-start',
+
                     'txt-xs',
                     // 'm-auto',
                     'p-5',
@@ -45,7 +47,7 @@ export const Resume = (props: Props) => {
                     fetchPriority={'high'}
                     className={
                         clsx([
-                            'object-cover',
+                            'object-contain',
                             // 'w-auto',
                             'w-[210mm]',
                             // 'h-[297mm]',

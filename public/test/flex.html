@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Responsive Flex Image</title>
+        <style>
+            div {
+                border: 2px solid green;
+            }
+
+            .container {
+                display: flex;
+            }
+
+            .flex-item {
+                flex: 1;
+            }
+
+            .image-wrapper {
+                overflow: hidden; /* Prevents scrolling and hides excess */
+            }
+            
+            .image-wrapper img {
+                width: 800px; /* Default width */
+                height: auto;
+                /* display: block; */
+            }
+
+            /* If the screen is smaller than 700px, the image remains at 700px but gets clipped */
+            @media (max-width: 700px) {
+                .image-wrapper {
+                    /* width: 700px; Locks width at 700px */
+                }
+            }
+
+            /* If the screen is smaller than 700px, the container prevents shifting */
+            @media (max-width: 699px) {
+                .container {
+                    justify-content: center; /* Centers the hidden part */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="flex-item">Left Content</div>
+            <div class="image-wrapper">
+                <img
+                    src="../v1/imgs/resume.jpg"
+                    alt="Responsive Image"
+                />
+            </div>
+            <div class="flex-item">Right Content</div>
+        </div>
+    </body>
+</html>

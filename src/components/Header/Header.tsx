@@ -9,7 +9,8 @@ export const Header = (props?: Props) => {
     return (
         <header>
             <Link
-                href={'/home'}
+                // href={'/home'}
+                href={'/'}
                 className={clsx('text-2xl', 'font-bold')}
             >
                 Taek Lim
