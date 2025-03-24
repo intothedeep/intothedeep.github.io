@@ -1,5 +1,5 @@
 import { pluckFirst, useObservable, useSubscription } from 'observable-hooks';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fromEvent, map, NEVER, share, switchMap } from 'rxjs';
 
 export const useIsMounted = () => {
