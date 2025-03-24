@@ -11,8 +11,8 @@ export const ClientRedirect = () => {
 
     useEffect(() => {
         if (isMounted) {
-            console.log('push to /about');
-            router.push('/home');
+            console.log('push to /profile');
+            router.push('/profile');
         }
     }, [isMounted]);
 

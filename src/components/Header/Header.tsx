@@ -31,7 +31,7 @@ export const Header = (props?: Props) => {
             </Link>
 
             <nav>
-                <Link href={'/home'}>Home</Link>
+                <Link href={'/profile'}>Profile</Link>
                 <Link href={'/about'}>About</Link>
                 {/* <Link href={"/resume"}>About</Link> */}
                 {/* <Link href={"/about"}>About</Link> */}
@@ -46,12 +46,12 @@ export const Header = (props?: Props) => {
                 />
             </button>
 
-            <div className="side-menu">
+            {/* <div className="side-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
-            </div>
+            </div> */}
         </header>
     );
 };
