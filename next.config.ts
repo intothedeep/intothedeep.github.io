@@ -44,10 +44,26 @@ const nextConfig: NextConfig = {
         });
 
         // SVG loader
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ['@svgr/webpack'],
-        });
+        const fileLoaderRule = config.module.rules.find((rule: any) =>
+            rule.test?.test?.('.svg')
+        );
+
+        // re define SVG rule
+        config.module.rules.push(
+            // URL 쿼리가 있는 SVG는 파일로 처리
+            {
+                ...fileLoaderRule,
+                test: /\.svg$/i,
+                resourceQuery: /url/,
+            },
+            // 나머지 SVG는 React 컴포넌트로 변환
+            {
+                test: /\.svg$/i,
+                issuer: { and: [/\.(js|ts)x?$/] }, // webpack 5 문법
+                resourceQuery: { not: [/url/] },
+                use: ['@svgr/webpack'],
+            }
+        );
 
         // alias for path
         config.resolve.alias = {
@@ -124,27 +140,6 @@ export default nextConfig;
 // 			use: ["@svgr/webpack"],
 // 		}
 // 	);
-
-// const fileLoaderRule = config.module.rules.find((rule: any) =>
-//     rule.test?.test?.('.svg')
-// );
-
-// // SVG 파일 처리 규칙 재정의
-// config.module.rules.push(
-//     // URL 쿼리가 있는 SVG는 파일로 처리
-//     {
-//         ...fileLoaderRule,
-//         test: /\.svg$/i,
-//         resourceQuery: /url/,
-//     },
-//     // 나머지 SVG는 React 컴포넌트로 변환
-//     {
-//         test: /\.svg$/i,
-//         issuer: { and: [/\.(js|ts)x?$/] }, // webpack 5 문법
-//         resourceQuery: { not: [/url/] },
-//         use: ['@svgr/webpack'],
-//     }
-// );
 
 // // 기존 파일 로더에서 SVG 제외
 // fileLoaderRule.exclude = /\.svg$/i;
