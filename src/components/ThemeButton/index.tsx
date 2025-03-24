@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 export const ThemeButton = dynamic(
     () => import('./ThemeButton').then((arg) => arg),
     {
-        loading: () => <p>Loading...</p>,
+        // loading: () => <p>Loading...</p>,
         ssr: false,
     }
 );

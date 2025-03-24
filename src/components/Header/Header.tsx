@@ -37,9 +37,7 @@ export const Header = () => {
                 {/* <Link href={"/about"}>About</Link> */}
                 {/* <button className="theme-toggle">🌙</button> */}
 
-                <Suspense fallback={<LoadingFallback />}>
-                    <ThemeButton />
-                </Suspense>
+                <ThemeButton />
             </nav>
 
             <button className="hamburger">

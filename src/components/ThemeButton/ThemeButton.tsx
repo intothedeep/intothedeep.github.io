@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 
 import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
-import { useIsMounted } from '@/hooks/useIsMounted.hook';
 
 import SunIcon from '@/svgs/sun.svg';
 import MoonIcon from '@/svgs/moon.svg';
@@ -53,11 +52,7 @@ export const ThemeButton = () => {
         setCurrentTheme(next);
     };
 
-    const { isMounted } = useIsMounted();
-
-    if (!isMounted) {
-        return null;
-    }
+    // const { isMounted } = useIsMounted();
 
     return (
         <button
