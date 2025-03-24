@@ -1,16 +1,6 @@
 'use client';
 
 import React from 'react';
-import mock01 from './images/mock01.png';
-import mock02 from './images/mock02.png';
-import mock03 from './images/mock03.png';
-import mock04 from './images/mock04.png';
-import mock05 from './images/mock05.png';
-import mock06 from './images/mock06.png';
-import mock07 from './images/mock07.png';
-import mock08 from './images/mock08.png';
-import mock09 from './images/mock09.png';
-import mock10 from './images/mock10.png';
 
 import './Project.scss';
 import clsx from 'clsx';

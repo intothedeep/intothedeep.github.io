@@ -1,11 +1,11 @@
 import React from 'react';
-
-import './Home.scss';
 import clsx from 'clsx';
+
+import './Dashboard.scss';
 
 type Props = {};
 
-export const Home = (props: Props) => {
+export const Dashboard = (props: Props) => {
     return (
         <main>
             <div className="card-container">
@@ -70,4 +70,4 @@ export const Home = (props: Props) => {
     );
 };
 
-export default Home;
+export default Dashboard;

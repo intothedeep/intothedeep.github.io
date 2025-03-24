@@ -1,40 +1,40 @@
-import { pluckFirst, useObservable, useSubscription } from "observable-hooks";
-import React, { useEffect, useState } from "react";
-import { fromEvent, map, NEVER, share, switchMap } from "rxjs";
+import { pluckFirst, useObservable, useSubscription } from 'observable-hooks';
+import React, { useEffect, useState } from 'react';
+import { fromEvent, map, NEVER, share, switchMap } from 'rxjs';
 
 export const useIsMounted = () => {
-	const [isMounted, setIsMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
-	const isMounted$ = useObservable(
-		(inputs$) => {
-			return inputs$.pipe(pluckFirst, share());
-		},
-		[isMounted]
-	);
+    const isMounted$ = useObservable(
+        (inputs$) => {
+            return inputs$.pipe(pluckFirst, share());
+        },
+        [isMounted]
+    );
 
-	useSubscription(isMounted$, (isMounted) => {
-		console.log("mounted? ", isMounted);
-	});
+    useSubscription(isMounted$, (isMounted) => {
+        console.log('mounted? ', isMounted);
+    });
 
-	const DOMContentLoaded$ = useObservable(() => {
-		return isMounted$.pipe(
-			switchMap((isMounted) => {
-				if (!isMounted) {
-					return NEVER;
-				}
+    const DOMContentLoaded$ = useObservable(() => {
+        return isMounted$.pipe(
+            switchMap((isMounted) => {
+                if (!isMounted) {
+                    return NEVER;
+                }
 
-				return fromEvent(document, "DOMContentLoaded");
-			})
-		);
-	});
+                return fromEvent(document, 'DOMContentLoaded');
+            })
+        );
+    });
 
-	return {
-		isMounted,
-		isMounted$,
-		DOMContentLoaded$,
-	};
+    return {
+        isMounted,
+        isMounted$,
+        DOMContentLoaded$,
+    };
 };

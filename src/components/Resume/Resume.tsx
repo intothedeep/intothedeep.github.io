@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import clsx from 'clsx';
 import ResumeTOC from '@/components/Resume/ResumeTOC';
 
 import './Resume.scss';
+import LoadingFallback from '@/components/loading/LoadingFallback';
 
 export const Resume = () => {
     return (
@@ -45,7 +46,9 @@ export const Resume = () => {
                 />
             </article>
 
-            <ResumeTOC />
+            <Suspense fallback={<LoadingFallback />}>
+                <ResumeTOC />
+            </Suspense>
         </main>
     );
 };
