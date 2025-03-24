@@ -1,14 +1,20 @@
-import ResumeTOC from '@/components/Resume/ResumeTOC';
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
+import ResumeTOC from '@/components/Resume/ResumeTOC';
 
 import './Resume.scss';
 
-type Props = {};
-
-export const Resume = (props: Props) => {
+export const Resume = () => {
     return (
-        <main className={clsx('relative', 'py-7', 'flex', 'justify-center', 'mt-16')}>
+        <main
+            className={clsx(
+                'relative',
+                'py-7',
+                'flex',
+                'justify-center',
+                'mt-16'
+            )}
+        >
             <article
                 id="resume"
                 className={clsx(
@@ -26,39 +32,16 @@ export const Resume = (props: Props) => {
                     'shadow-lg'
                 )}
             >
-                {/* <div className={clsx('flex flex-1 justify-between')}>
-                    <h1 className={clsx('text-base')}>Taek Lim</h1>
-                    <div className={clsx('text-xs')}>
-                        <div>tio.taek.lim@gmail.com</div>
-                        <div>github.com/tradelunch</div>
-                    </div>
-                    <div>Java, Javascript, spring</div>
-                </div> */}
-                {/* <embed
-                    src={'/v1/pdfs/resume.pdf'}
-                    // width="800px"
-                    // height=""
-                    className={clsx('flex-1')}
-                /> */}
-                {/* <img className={clsx(["object-cover"], )} src="/v1/imgs/resume.jpg" alt="resume" /> */}
                 <img
                     src="/v1/imgs/resume_small.jpeg"
                     alt="Lim Taek resume"
                     fetchPriority={'high'}
-                    className={
-                        clsx([
-                            'object-contain',
-                            // 'w-auto',
-                            'w-[210mm]',
-                            // 'h-[297mm]',
-                        ])
-                        // 'w-full',
-                        // 'h-auto',
-                    }
-                    // width={1000}
-                    // height={0}
-                    // sizes="100vw"
-                    // style={{ width: '100%', height: 'auto' }}
+                    className={clsx([
+                        'object-contain',
+                        // 'w-auto',
+                        'w-[210mm]',
+                        // 'h-[297mm]',
+                    ])}
                 />
             </article>
 
