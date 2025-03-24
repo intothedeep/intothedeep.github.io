@@ -40,8 +40,8 @@
 //     );
 // };
 
-const test = () => {
-    return <>test</>;
+const page = () => {
+    return <div>test</div>;
 };
 
-export default test;
+export default page;

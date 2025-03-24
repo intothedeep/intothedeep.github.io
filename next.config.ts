@@ -35,7 +35,7 @@ const nextConfig: NextConfig = {
 
     /* config options here */
     webpack: (config, options) => {
-        console.log('--> webpack config called');
+        console.log('--> spa config with export s: webpack config called');
 
         // PDF loader
         config.module.rules.push({
