@@ -10,15 +10,15 @@ export const ClientRedirect = () => {
     const { isMounted } = useIsMounted();
 
     useEffect(() => {
-        
         if (isMounted) {
             console.log('push to /about');
             router.push('/home');
         }
-
     }, [isMounted]);
 
-    return <></>;
+    // return undefined; // error
+    // return <></>; // ok
+    return null; // ok
 };
 
 export default ClientRedirect;
