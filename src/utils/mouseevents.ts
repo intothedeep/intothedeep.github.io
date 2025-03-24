@@ -29,7 +29,7 @@ export const toPos = (obs$: any) => {
 	);
 };
 
-const initialDotSize = 24; // Starting size in pixels
+const initialDotSize = 12; // Starting size in pixels
 
 export function createTrailDot(x: number, y: number) {
 	// Create dot element
@@ -48,7 +48,7 @@ export function createTrailDot(x: number, y: number) {
 	// Start animation
 	let opacity = 0.7;
 	let scale = 1;
-	const lifespan = 500; // milliseconds before complete fade
+	const lifespan = 100; // milliseconds before complete fade
 	const startTime = Date.now();
 
 	function animate() {

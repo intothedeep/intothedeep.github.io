@@ -2,12 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
+import { useIsMounted } from '@/hooks/useIsMounted.hook';
+import clsx from 'clsx';
 
 // SVG 컴포넌트 임포트
-import SunIcon from '@/svg/sun.svg';
-import MoonIcon from '@/svg/moon.svg';
-import clsx from 'clsx';
-import { useIsMounted } from '@/hooks/useIsMounted.hook';
+import SunIcon from '@/svgs/sun.svg';
+import MoonIcon from '@/svgs/moon.svg';
 
 export enum Theme {
     dark = 'dark',
@@ -19,13 +19,23 @@ type Props = {};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const ThemeButton = (props: Props) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.dark);
+    const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.light);
     const { matches: isSystemDark } = useMediaQuery(
         '(prefers-color-scheme: dark)'
     );
 
     const isDark = currentTheme === Theme.dark;
+
+    useEffect(() => {
+        // const theme = isSystemDark ? Theme.dark : Theme.light;
+        // document.body.setAttribute('data-theme', theme);
+        // setCurrentTheme(theme);
+
+        document.body.setAttribute('data-theme', Theme.light);
+        setCurrentTheme(Theme.light);
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+    }, [isSystemDark]);
 
     const handleOnClickTheme = () => {
         const theme = document.body.getAttribute('data-theme');
@@ -33,44 +43,41 @@ export const ThemeButton = (props: Props) => {
         let next = (theme as Theme) || currentTheme;
         if (theme === Theme.dark) {
             next = Theme.light;
+            document.body.classList.add('light-mode');
+            document.body.classList.remove('dark-mode');
         } else {
             next = Theme.dark;
+            document.body.classList.add('dark-mode');
+            document.body.classList.remove('light-mode');
         }
+
         document.body.setAttribute('data-theme', next);
         setCurrentTheme(next);
     };
 
-    useEffect(() => {
-        const theme = isSystemDark ? Theme.dark : Theme.light;
-        document.body.setAttribute('data-theme', theme);
-        setCurrentTheme(theme);
-    }, []);
-    console.log('check isSystemDark ', currentTheme, isSystemDark);
-
     const { isMounted } = useIsMounted();
 
     if (!isMounted) {
-        return;
+        return null;
     }
 
     return (
         <button
             onClick={handleOnClickTheme}
             className={clsx(['cursor-pointer'])}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         >
-            {isDark &&
-                // <SunIcon
-                //     width={24}
-                //     height={24}
-                // />
-                '😎'}
-
-            {!isDark &&
-                // <MoonIcon
-                //     width={24}
-                //     height={24}
-                // />
-                '🌑'}
+            {isDark ? (
+                <SunIcon
+                    width={24}
+                    height={24}
+                />
+            ) : (
+                <MoonIcon
+                    width={24}
+                    height={24}
+                />
+            )}
         </button>
     );
 };

@@ -8,7 +8,7 @@ type Props = {};
 
 export const Resume = (props: Props) => {
     return (
-        <main className={clsx('relative', 'py-7', 'flex', 'justify-center')}>
+        <main className={clsx('relative', 'py-7', 'flex', 'justify-center', 'mt-16')}>
             <article
                 id="resume"
                 className={clsx(

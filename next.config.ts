@@ -71,7 +71,7 @@ const nextConfig: NextConfig = {
         // 경로 별칭 설정
         config.resolve.alias = {
             ...config.resolve.alias,
-            '@/svg': path.resolve(process.cwd(), './src/assets/svgs'),
+            '@/svgs': path.resolve(process.cwd(), './src/assets/svgs'),
             '@/ui': path.resolve(process.cwd(), './src/components/ui'),
             '@/components': path.resolve(process.cwd(), './src/components'),
         };

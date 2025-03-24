@@ -11,8 +11,7 @@ export const ResumeTOC = (props: Props) => {
         <ul
             className={clsx(
                 'resume-toc',
-                'sticky w-fit right-1 top-7 ml-2 h-fit'
-                
+                'sticky w-fit right-1 top-20 ml-2 h-fit'
             )}
         >
             <li>
