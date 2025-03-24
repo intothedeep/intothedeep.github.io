@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
-import { useIsMounted } from '@/hooks/useIsMounted.hook';
 import clsx from 'clsx';
 
-// SVG 컴포넌트 임포트
+import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
+import { useIsMounted } from '@/hooks/useIsMounted.hook';
+
 import SunIcon from '@/svgs/sun.svg';
 import MoonIcon from '@/svgs/moon.svg';
 
@@ -14,11 +14,9 @@ export enum Theme {
     light = 'light',
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-type Props = {};
+// type Props = {};
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const ThemeButton = (props: Props) => {
+export const ThemeButton = () => {
     const [currentTheme, setCurrentTheme] = useState<Theme>(Theme.light);
     const { matches: isSystemDark } = useMediaQuery(
         '(prefers-color-scheme: dark)'

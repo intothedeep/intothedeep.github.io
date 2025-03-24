@@ -1,20 +1,13 @@
+'use client';
+import React, { Suspense } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import React, { Suspense } from 'react';
 
 import Hamburger from '@/svgs/hamburger.svg';
 import LoadingFallback from '@/components/loading/LoadingFallback';
+import { ThemeButton } from '@/components/ThemeButton';
 
-// Lazy load ThemeButton
-const LazyThemeButton = React.lazy(() =>
-    import('@/components/ThemeButton').then((module) => ({
-        default: module.ThemeButton,
-    }))
-);
-
-type Props = {};
-
-export const Header = (props?: Props) => {
+export const Header = () => {
     return (
         <header
             className={clsx('header', [
@@ -45,7 +38,7 @@ export const Header = (props?: Props) => {
                 {/* <button className="theme-toggle">🌙</button> */}
 
                 <Suspense fallback={<LoadingFallback />}>
-                    <LazyThemeButton />
+                    <ThemeButton />
                 </Suspense>
             </nav>
 
