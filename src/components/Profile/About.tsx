@@ -15,6 +15,12 @@ function Main() {
                 'flex-1',
             ])}
         >
+            <link
+                rel="preload"
+                href="/home/taek_lim_avatar2.png"
+                as="image"
+            />
+
             <div className={clsx('about-section', 'flex-1')}>
                 <div className="image-wrapper">
                     <img
