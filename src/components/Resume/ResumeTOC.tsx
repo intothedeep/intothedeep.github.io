@@ -1,6 +1,5 @@
 'use client';
 
-import { useMediaQuery } from '@/hooks/useMediaQuery.hook';
 import clsx from 'clsx';
 import React from 'react';
 
