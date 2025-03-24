@@ -1,10 +1,11 @@
-import { ThemeButton } from '@/components/ThemeButton';
 import clsx from 'clsx';
 import Link from 'next/link';
 import React, { Suspense } from 'react';
 
 import Hamburger from '@/svgs/hamburger.svg';
 import LoadingFallback from '@/components/loading/LoadingFallback';
+
+// import { ThemeButton } from '@/components/ThemeButton';
 
 type Props = {};
 
@@ -38,9 +39,9 @@ export const Header = (props?: Props) => {
                 {/* <Link href={"/about"}>About</Link> */}
                 {/* <button className="theme-toggle">🌙</button> */}
 
-                <Suspense fallback={<LoadingFallback />}>
+                {/* <Suspense fallback={<LoadingFallback />}>
                     <ThemeButton />
-                </Suspense>
+                </Suspense> */}
             </nav>
 
             <button className="hamburger">
