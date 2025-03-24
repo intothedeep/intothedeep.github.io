@@ -5,7 +5,7 @@ import FadeIn from '@/components/Profile/FadeIn';
 import Loading from '@/app/loading';
 
 // Lazy load components
-const Main = React.lazy(() => import('@/components/Profile/About'));
+const About = React.lazy(() => import('@/components/Profile/About'));
 const Expertise = React.lazy(() => import('@/components/Profile/Expertise'));
 const Timeline = React.lazy(() => import('@/components/Profile/Timeline'));
 const Project = React.lazy(() => import('@/components/Profile/Project'));
@@ -22,7 +22,7 @@ const ProfileContent = () => (
         className={clsx('fade-in-wrapper')}
         childClassName={clsx(['flex flex-col', 'min-h-screen'])}
     >
-        <Main />
+        <About />
         <Expertise />
         <Timeline />
         <Project />

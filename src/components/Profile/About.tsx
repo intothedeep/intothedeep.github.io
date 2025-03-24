@@ -63,7 +63,6 @@ function Main() {
                             rel="noreferrer"
                         >
                             <LinkedInIcon />
-                            <div>link link</div>
                         </a>
                     </div>
                 </div>
