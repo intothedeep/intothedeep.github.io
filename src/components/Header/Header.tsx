@@ -5,7 +5,12 @@ import React, { Suspense } from 'react';
 import Hamburger from '@/svgs/hamburger.svg';
 import LoadingFallback from '@/components/loading/LoadingFallback';
 
-// import { ThemeButton } from '@/components/ThemeButton';
+// Lazy load ThemeButton
+const LazyThemeButton = React.lazy(() =>
+    import('@/components/ThemeButton').then((module) => ({
+        default: module.ThemeButton,
+    }))
+);
 
 type Props = {};
 
@@ -39,9 +44,9 @@ export const Header = (props?: Props) => {
                 {/* <Link href={"/about"}>About</Link> */}
                 {/* <button className="theme-toggle">🌙</button> */}
 
-                {/* <Suspense fallback={<LoadingFallback />}>
-                    <ThemeButton />
-                </Suspense> */}
+                <Suspense fallback={<LoadingFallback />}>
+                    <LazyThemeButton />
+                </Suspense>
             </nav>
 
             <button className="hamburger">

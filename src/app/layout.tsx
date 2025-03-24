@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { ClientTrailCursorDom } from '@/components/ClientTrailCursorDom';
 import { ClientTrailCursorCanvas } from '@/components/ClientTrailCursorCanvas';
 
-// import { Header } from '@/components/Header';
+import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 import '@/styles/00_global.scss';
@@ -48,7 +48,7 @@ export default function RootLayout({
                     'relative'
                 )}
             >
-                {/* <Header /> */}
+                <Header />
                 {children}
                 <Footer />
 

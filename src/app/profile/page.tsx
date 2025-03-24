@@ -15,7 +15,6 @@ const Project = React.lazy(() => import('@/components/Profile/Project'));
 // const Timeline = dynamic(() => import('./Timeline'), { ssr: false });
 
 import '@/components/Profile/index.scss';
-// import Loading from '@/app/loading';
 
 const ProfileContent = () => (
     <FadeIn
