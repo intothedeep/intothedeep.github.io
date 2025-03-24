@@ -1,5 +1,7 @@
 import { Resume } from '@/components/Resume';
 
-export default function AboutPage() {
+const page = () => {
     return <Resume />;
-}
+};
+
+export default page;
