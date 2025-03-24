@@ -9,6 +9,8 @@ import { Footer } from '@/components/Footer';
 
 import '@/styles/00_global.scss';
 import clsx from 'clsx';
+import { Suspense } from 'react';
+import Loading from '@/app/loading';
 
 const geistSans = Geist({
     variable: '--font-geist-sans',
@@ -48,7 +50,6 @@ export default function RootLayout({
             >
                 <Header />
                 {children}
-
                 <Footer />
                 <ClientTrailCursorCanvas />
                 <ClientTrailCursorDom />

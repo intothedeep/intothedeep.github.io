@@ -1,9 +1,11 @@
 import React, { Suspense } from 'react';
 import clsx from 'clsx';
 import ResumeTOC from '@/components/Resume/ResumeTOC';
+import LoadingFallback from '@/components/loading/LoadingFallback';
 
 import './Resume.scss';
-import LoadingFallback from '@/components/loading/LoadingFallback';
+
+const LazyResumeTOC = React.lazy(() => import('@/components/Resume/ResumeTOC'));
 
 export const Resume = () => {
     return (
@@ -47,7 +49,7 @@ export const Resume = () => {
             </article>
 
             <Suspense fallback={<LoadingFallback />}>
-                <ResumeTOC />
+                <LazyResumeTOC />
             </Suspense>
         </main>
     );

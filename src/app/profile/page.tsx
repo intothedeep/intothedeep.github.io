@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import clsx from 'clsx';
 
 import FadeIn from '@/components/Profile/FadeIn';
+import Loading from '@/app/loading';
 
 // Lazy load components
 const Main = React.lazy(() => import('@/components/Profile/About'));
@@ -32,7 +33,7 @@ const ProfileContent = () => (
 const page = () => {
     return (
         <main className={clsx('main-container', ['relative', 'flex flex-col'])}>
-            <Suspense>
+            <Suspense fallback={<Loading />}>
                 <ProfileContent />
             </Suspense>
         </main>
