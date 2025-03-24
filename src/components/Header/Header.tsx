@@ -1,10 +1,8 @@
-'use client';
-import React, { Suspense } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 
 import Hamburger from '@/svgs/hamburger.svg';
-import LoadingFallback from '@/components/loading/LoadingFallback';
 import { ThemeButton } from '@/components/ThemeButton';
 
 export const Header = () => {
