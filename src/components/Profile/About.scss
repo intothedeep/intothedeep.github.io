@@ -16,9 +16,12 @@
     // min-height: 700px;
     background-image: url('../../assets/imgs/freediving_small.png');
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .about-section .content {
