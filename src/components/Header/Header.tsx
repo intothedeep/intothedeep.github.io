@@ -34,8 +34,6 @@ export const Header = () => {
                 {/* <Link href={"/resume"}>About</Link> */}
                 {/* <Link href={"/about"}>About</Link> */}
                 {/* <button className="theme-toggle">🌙</button> */}
-
-                <ThemeButton />
             </nav>
 
             <button className="hamburger">
@@ -45,12 +43,14 @@ export const Header = () => {
                 />
             </button>
 
-            {/* <div className="side-menu">
+            <ThemeButton />
+
+            {/* <nav className="side-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
                 <a href="#contact">Contact</a>
-            </div> */}
+            </nav> */}
         </header>
     );
 };
