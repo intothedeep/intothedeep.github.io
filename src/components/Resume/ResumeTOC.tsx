@@ -54,6 +54,16 @@ export const ResumeTOC = (props: Props) => {
                     tio.taek.lim@gmail.com
                 </a>
             </li>
+            <li>
+                <a
+                    href="/v1/pdf/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download={'Taek_Lim__Software_Engineer_Resume.pdf'}
+                >
+                    Download Resume PDF
+                </a>
+            </li>
         </ul>
     );
 };

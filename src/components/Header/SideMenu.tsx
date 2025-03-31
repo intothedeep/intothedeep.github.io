@@ -17,8 +17,6 @@ const SideMenu = (props: Props) => {
             <button
                 className={clsx('hamburger', ['cursor-pointer'])}
                 onClick={(e) => {
-                    console.log(e.currentTarget, sideRef.current);
-
                     sideRef.current?.classList.toggle('open');
                 }}
             >

@@ -36,7 +36,7 @@ export const Resume = () => {
                 )}
             >
                 <img
-                    src="/v1/imgs/resume_small.jpeg"
+                    src="/v1/img/resume.jpg"
                     alt="Lim Taek resume"
                     fetchPriority={'high'}
                     className={clsx([
