@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: 'Taek Lim | Frontend Software Engineer',
+    title: 'Taek Lim | Software Engineer - Backend, Frontend, Mobile and Infra',
     description:
         'Software engineer with expertise in React, React Native, and Spring. Specializing in frontend development with experience in optimizing performance and building cross-platform applications.',
     icons: {
