@@ -12,6 +12,13 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+    // Ignore deprecated files
+    {
+        ignores: [
+            'src/feature/blog/deprecated/**',
+            'src/pages/blog/deprecated/**'
+        ]
+    },
     ...compat.extends('next/core-web-vitals', 'next/typescript'),
     ...compat.config({
         extends: ['next'],

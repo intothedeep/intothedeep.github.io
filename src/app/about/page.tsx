@@ -1,28 +1,28 @@
 import React, { Suspense } from 'react';
 import clsx from 'clsx';
 
-import FadeIn from '@/components/Profile/FadeIn';
+import FadeIn from '@/components/About/FadeIn';
 import Loading from '@/app/loading';
 
 // Lazy load components
-const About = React.lazy(() => import('@/components/Profile/About'));
-const Expertise = React.lazy(() => import('@/components/Profile/Expertise'));
-const Timeline = React.lazy(() => import('@/components/Profile/Timeline'));
-const Project = React.lazy(() => import('@/components/Profile/Project'));
+const Intro = React.lazy(() => import('@/components/About/Intro'));
+const Expertise = React.lazy(() => import('@/components/About/Expertise'));
+const Timeline = React.lazy(() => import('@/components/About/Timeline'));
+const Project = React.lazy(() => import('@/components/About/Project'));
 
 // 클라이언트 컴포넌트 동적 로딩
 // import dynamic from 'next/dynamic';
 // const Timeline = dynamic(() => import('./Timeline'), { ssr: false });
 
-import '@/components/Profile/index.scss';
+import '@/components/About/index.scss';
 
-const ProfileContent = () => (
+const AboutContent = () => (
     <FadeIn
         transitionDuration={700}
         className={clsx('fade-in-wrapper')}
         childClassName={clsx(['flex flex-col', 'min-h-screen'])}
     >
-        <About />
+        <Intro />
         <Expertise />
         <Timeline />
         <Project />
@@ -31,9 +31,9 @@ const ProfileContent = () => (
 
 const page = () => {
     return (
-        <main className={clsx('main-container', ['relative', 'flex flex-col'])}>
+        <main className={clsx('main-container', ['relative', 'flex-1 flex flex-col'])}>
             <Suspense fallback={<Loading />}>
-                <ProfileContent />
+                <AboutContent />
             </Suspense>
         </main>
     );

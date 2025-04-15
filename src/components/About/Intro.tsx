@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import GitHubIcon from '@/svgs/github.svg';
 import LinkedInIcon from '@/svgs/linkedin.svg';
 
-import './About.scss';
+import './Intro.scss';
 
 function Main() {
     return (

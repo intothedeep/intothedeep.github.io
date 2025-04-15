@@ -13,6 +13,7 @@ export const Resume = () => {
             className={clsx(
                 'relative',
                 'py-7',
+                'flex-1',
                 'flex',
                 'justify-center',
                 'mt-16'

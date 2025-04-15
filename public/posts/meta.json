@@ -1,0 +1,127 @@
+{
+    "type": "FOLDER",
+    "blog": {
+        "type": "FOLDER",
+        "depth2_folder": {
+            "type": "FOLDER",
+            "files": [
+                {
+                    "name": "test.md",
+                    "title": "test",
+                    "type": "FILE",
+                    "metadata": {
+                        "id": "641c2d4f-db9e-4229-bf7c-b5cba8056eaf",
+                        "title": "test",
+                        "summary": "test",
+                        "thumbnail": "/images/thumbnails/article1.jpg",
+                        "date": "2025-03-31",
+                        "tags": [
+                            "태그1",
+                            "태그2"
+                        ]
+                    },
+                    "content": "\n# 게시물 제목\n\n## Table of Contents\n\n<!-- toc -->\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n\n## code block\n\n```\nclass Hello {\n    public void static main(String ...args) {\n        System.out.println(\"Hello World!\");\n    }\n}\n```\n"
+                }
+            ]
+        },
+        "files": [
+            {
+                "name": "markdown-example copy.md",
+                "title": "markdown-example copy",
+                "type": "FILE",
+                "metadata": {
+                    "id": "1ffc2297-2737-4509-8db6-6e2ac4723cfe",
+                    "title": "게시물 제목",
+                    "summary": "게시물 요약",
+                    "thumbnail": "/images/thumbnails/article1.jpg",
+                    "date": "2025-03-31",
+                    "tags": [
+                        "태그1",
+                        "태그2"
+                    ]
+                },
+                "content": "\n# 게시물 제목\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n"
+            },
+            {
+                "name": "markdown-example.md",
+                "title": "markdown-example",
+                "type": "FILE",
+                "metadata": {
+                    "id": "1ffc2297-2737-4509-8db6-6e2ac4723cfe",
+                    "title": "게시물 제목",
+                    "summary": "게시물 요약",
+                    "thumbnail": "/images/thumbnails/article1.jpg",
+                    "date": "2025-03-31",
+                    "tags": [
+                        "태그1",
+                        "태그2"
+                    ]
+                },
+                "content": "\n# 게시물 제목\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n"
+            }
+        ]
+    },
+    "lecture": {
+        "type": "FOLDER",
+        "files": [
+            {
+                "name": "Spring-6-and-Security.md",
+                "title": "Spring-6-and-Security",
+                "type": "FILE",
+                "metadata": {
+                    "id": "9b268f99-1294-4a03-9ab6-cccb7e022e9a",
+                    "title": "Spring boot and security",
+                    "summary": "lecture notes",
+                    "thumbnail": "/thumbnail/thumb.jpg",
+                    "date": "2025-03-31",
+                    "tags": [
+                        "태그1",
+                        "태그2"
+                    ]
+                },
+                "content": "\n# Spring boot and security\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n"
+            }
+        ]
+    },
+    "oauth2": {
+        "type": "FOLDER",
+        "files": [
+            {
+                "name": "custom-oauth2-auth-server.md",
+                "title": "custom-oauth2-auth-server",
+                "type": "FILE",
+                "metadata": {
+                    "id": "2b0a2a48-51e0-407d-bf3e-0e49ea667454",
+                    "title": "custom-oauth2-auth-server",
+                    "summary": "create a custom oauth2 server using spring boot and spring security",
+                    "thumbnail": "/images/thumbnails/article1.jpg",
+                    "date": "2025-03-31",
+                    "tags": [
+                        "태그1",
+                        "태그2"
+                    ]
+                },
+                "content": "\n# OAuth2.1 and OpenId Connect auth Server\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n"
+            }
+        ]
+    },
+    "files": [
+        {
+            "name": "root_post.md",
+            "title": "root_post",
+            "type": "FILE",
+            "metadata": {
+                "id": "2b0a2a48-51e0-407d-bf3e-0e49ta667454",
+                "title": "root post article",
+                "summary": "create a custom oauth2 server using spring boot and spring security",
+                "thumbnail": "/images/thumbnails/article1.jpg",
+                "date": "2025-04-05",
+                "tags": [
+                    "태그5",
+                    "태그9"
+                ]
+            },
+            "content": "\n# root post article\n\n## Table of Contents\n\n<!-- toc -->\n\n## 첫 번째 섹션\n\n내용...\n\n## 두 번째 섹션\n\n내용...\n"
+        }
+    ]
+}

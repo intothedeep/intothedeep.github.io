@@ -29,7 +29,7 @@ export const Header = () => {
             </Link>
 
             <nav>
-                <Link href={'/profile'}>Profile</Link>
+                <Link href={'/about'}>About</Link>
                 <Link href={'/resume'}>Resume</Link>
                 {/* <Link href={"/resume"}>About</Link> */}
                 {/* <Link href={"/about"}>About</Link> */}

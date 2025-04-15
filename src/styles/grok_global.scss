@@ -41,13 +41,18 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        'header'
-        'main'
-        'footer';
-    position: relative;
+
+    gap: 0.3rem;
+    // display: grid;
+    // grid-template-rows: auto 1fr auto;
+    // grid-template-areas:
+    //     'header'
+    //     'main'
+    //     'footer';
+    // position: relative;
+
+    display: flex;
+    flex-direction: column;
 }
 
 svg {

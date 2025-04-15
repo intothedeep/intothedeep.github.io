@@ -46,16 +46,26 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "**/scripts/*"
+        "**/scripts/*",
+
+        "scripts/**/*.ts",
+        "src/**/*.ts",
+        "types/**/*.ts"
     ],
 
-    // "exclude": ["node_modules"].,
     "exclude": [
+        // Dependencies
         "node_modules",
-        "*.stories.*",
-        "*.spec.*",
-        "tio-*",
-        "*.mock.*",
-        "docs"
+
+        // Test and documentation files
+        "*.stories.*", // Storybook files
+        "*.spec.*", // Test files
+        "*.mock.*", // Mock files
+        "docs", // Documentation directory
+
+        // Custom patterns
+        "tio-*", // Files starting with tio-
+        "**/deprecated*/**", // All deprecated directories
+        "src/features/**/deprecated*/**" // Specifically exclude deprecated pages
     ]
 }

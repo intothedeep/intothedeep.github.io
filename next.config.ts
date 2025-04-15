@@ -18,10 +18,20 @@ const nextConfig: NextConfig = {
     /** deactivate for SPA */
     images: {
         unoptimized: true,
+        // 이미지 도메인 허용 (필요한 경우 외부 이미지 도메인 추가)
+        domains: ['example.com', 'images.unsplash.com'],
+    },
+
+    // 404 페이지 및 에러 페이지 커스텀을 위한 설정
+    trailingSlash: true,
+
+    // 타입스크립트 설정
+    typescript: {
+        // 프로덕션 빌드 시 타입 체크 건너뛰기 (속도 향상)
+        ignoreBuildErrors: false,
     },
 
     /** turbo pack */
-
     experimental: {
         turbo: {
             rules: {
@@ -34,8 +44,8 @@ const nextConfig: NextConfig = {
     },
 
     /* config options here */
-    webpack: (config, options) => {
-        console.log('--> spa config with export s: webpack config called');
+    webpack: (config: any, options: any) => {
+        console.log('>> next.config.ts::webpack config called');
 
         // PDF loader
         config.module.rules.push({
@@ -56,15 +66,15 @@ const nextConfig: NextConfig = {
                                     name: 'preset-default',
                                     params: {
                                         overrides: {
-                                            removeViewBox: false
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            ]
+                                            removeViewBox: false,
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                    },
+                },
+            ],
         });
 
         // alias for path
