@@ -47,7 +47,7 @@ function Main() {
                     </div>
                     <h1>Taek Lim</h1>
                     <p>Software Engineer</p>
-                    <p>Backend, Fronted, Mobile with React Native</p>
+                    <p>Backend, Frontend, Mobile with React Native</p>
 
                     <div className="mobile_social_icons">
                         <a
