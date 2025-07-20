@@ -30,18 +30,64 @@ const nextConfig: NextConfig = {
         // 프로덕션 빌드 시 타입 체크 건너뛰기 (속도 향상)
         ignoreBuildErrors: false,
     },
+    turbopack: {
+        // Example: adding an alias and custom file extension
+        resolveAlias: {
+            underscore: 'lodash',
+            '@/svgs': './src/assets/svgs',
+            '@/ui': './src/components/ui',
+            '@/components': './src/components',
+        },
+        resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json'],
 
-    /** turbo pack */
-    experimental: {
-        turbo: {
-            rules: {
-                '*.svg': {
-                    loaders: ['@svgr/webpack'],
-                    as: '*.tsx',
-                },
+        rules: {
+            // SVG loader configuration for Turbopack
+            '*.svg': {
+                loaders: ['@svgr/webpack'],
+                as: '*.tsx',
             },
+            // CSS/SCSS loader configuration
+            // '*.css': {
+            //     loaders: ['postcss-loader'],
+            // },
+            // // TypeScript configuration for Turbopack
+            // '*.ts': {
+            //     loaders: ['ts-loader'],
+            // },
+            // '*.tsx': {
+            //     loaders: ['ts-loader'],
+            // },
         },
     },
+
+    /** Turbopack experimental configuration */
+    // experimental: {
+    //     turbo: {
+    //         rules: {
+    //             // SVG loader configuration for Turbopack
+    //             '*.svg': {
+    //                 loaders: ['@svgr/webpack'],
+    //                 as: '*.tsx',
+    //             },
+    //             // CSS/SCSS loader configuration
+    //             '*.css': {
+    //                 loaders: ['postcss-loader'],
+    //             },
+    //             // TypeScript configuration for Turbopack
+    //             '*.ts': {
+    //                 loaders: ['ts-loader'],
+    //             },
+    //             '*.tsx': {
+    //                 loaders: ['ts-loader'],
+    //             },
+    //         },
+    //         resolveAlias: {
+    //             '@/svgs': './src/assets/svgs',
+    //             '@/ui': './src/components/ui',
+    //             '@/components': './src/components',
+    //         },
+    //     },
+    // },
 
     /* config options here */
     webpack: (config: any, options: any) => {
