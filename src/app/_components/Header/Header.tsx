@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 import Hamburger from '@/svgs/hamburger.svg';
-import { ThemeButton } from '@/components/ThemeButton';
+import { ThemeButton } from '@/app/_components/ThemeButton';
 
 export const Header = () => {
     return (

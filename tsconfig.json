@@ -21,12 +21,13 @@
             "@/*": ["./src/*"],
             "@/svgs/*": ["./src/assets/svgs/*"],
             "@/components/*": ["./src/components/*"],
-            "@/ui/*": ["./src/components/ui/*"]
+            "@/ui/*": ["./src/components/ui/*"],
+            "@/_types/*": ["./src/_types/*"]
         },
         "typeRoots": [
             "./node_modules/@types",
-            "./types",
-            "**/types",
+            "./src/_types",
+            "**/_types",
             "./typings"
         ],
         "target": "ES2017"
@@ -50,7 +51,8 @@
 
         "scripts/**/*.ts",
         "src/**/*.ts",
-        "types/**/*.ts"
+        "src/_types/**/*.ts",
+        "**/_types/**/*.ts"
     ],
 
     "exclude": [

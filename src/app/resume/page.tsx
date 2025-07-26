@@ -1,4 +1,4 @@
-import { Resume } from '@/components/Resume';
+import { Resume } from '@/app/resume/_components/Resume';
 
 const page = () => {
     return <Resume />;

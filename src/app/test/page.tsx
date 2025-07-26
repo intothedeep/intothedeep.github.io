@@ -1,4 +1,4 @@
-import { CustomButton } from '@/components/button';
+import { CustomButton } from '@/app/_components/button';
 import React from 'react';
 
 const page = () => {

@@ -1,11 +1,12 @@
 import React, { Suspense } from 'react';
+import ResumeTOC from '@/app/resume/_components/ResumeTOC';
+import LoadingFallback from '@/app/_components/loading/LoadingFallback';
+
 import clsx from 'clsx';
-import ResumeTOC from '@/components/Resume/ResumeTOC';
-import LoadingFallback from '@/components/loading/LoadingFallback';
 
 import './Resume.scss';
 
-const LazyResumeTOC = React.lazy(() => import('@/components/Resume/ResumeTOC'));
+const LazyResumeTOC = React.lazy(() => import('@/app/resume/_components/ResumeTOC'));
 
 export const Resume = () => {
     return (

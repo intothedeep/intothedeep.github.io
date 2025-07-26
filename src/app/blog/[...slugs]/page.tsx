@@ -1,10 +1,10 @@
 import React from 'react';
-import clsx from 'clsx';
 
 import path from 'path';
 import fs from 'fs';
 
 import PostDetail from '@/app/blog/[...slugs]/PostDetail';
+import BlogDashboard from '@/app/blog/BlogDashboard';
 import {
     POST_DATA_FILE_NAME,
     POST_DATA_PATH,
@@ -18,26 +18,18 @@ export const metadata: Metadata = {
 };
 
 type Props = {
-    params: Promise<TPostFlattenedItem>;
+    params: Promise<{ slugs?: string[] }>;
 };
 
 export default async function Page({ params }: Props) {
-    const { slugs, type, level, title, metadata, content } = await params.then(
-        (posts) => {
-            console.log('>>>>> blog slugs page:: ', posts);
-            return posts;
-        }
-    );
-
-    // console.log('>> post: ', {
-    //     slugs,
-    //     type,
-    //     level,
-    //     title,
-    //     metadata,
-    //     content,
-    // });
-
+    const { slugs } = await params;
+    
+    // If no slugs or empty slugs, show dashboard
+    if (!slugs || slugs.length === 0) {
+        return <BlogDashboard />;
+    }
+    
+    // Show individual post detail
     return <PostDetail slugs={slugs} />;
 }
 
@@ -53,9 +45,14 @@ export async function generateStaticParams() {
     const posts = JSON.parse(jsonData);
 
     // 각 포스트에 대한 경로 생성
-    // const slugs = posts.map((post: TPostFlattenedItem) => {
-    //     return post;
-    // });
+    const params = [
+        // Add empty slugs for homepage
+        { slugs: [] },
+        // Add all posts
+        ...posts.filter((post: any) => post.type === 'FILE').map((post: any) => ({
+            slugs: post.slugs
+        }))
+    ];
 
-    return posts;
+    return params;
 }

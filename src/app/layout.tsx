@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { ClientTrailCursorDom } from '@/components/ClientTrailCursorDom';
-import { ClientTrailCursorCanvas } from '@/components/ClientTrailCursorCanvas';
+import { ClientTrailCursorDom } from '@/app/_components/ClientTrailCursorDom';
+import { ClientTrailCursorCanvas } from '@/app/_components/ClientTrailCursorCanvas';
 
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
+import { Header } from '@/app/_components/Header';
+import { Footer } from '@/app/_components/Footer';
 
 import '@/styles/00_global.scss';
 import clsx from 'clsx';

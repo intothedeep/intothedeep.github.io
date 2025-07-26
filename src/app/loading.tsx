@@ -1,4 +1,4 @@
-import LoadingFallback from '@/components/loading/LoadingFallback';
+import LoadingFallback from '@/app/_components/loading/LoadingFallback';
 
 export default function Loading() {
     return <LoadingFallback />;
