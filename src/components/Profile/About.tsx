@@ -17,14 +17,14 @@ function Main() {
         >
             <link
                 rel="preload"
-                href="/home/taek_lim_avatar2.png"
+                href="/home/taek_lim_avatar2.jpg"
                 as="image"
             />
 
             <div className={clsx('about-section', 'flex-1')}>
                 <div className="image-wrapper">
                     <img
-                        src="/home/taek_lim_avatar2.png"
+                        src="/home/taek_lim_avatar2.jpg"
                         alt="Avatar"
                     />
                 </div>
